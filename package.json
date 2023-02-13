@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/andreifer/TDD-/issues"
   },
-  "homepage": "https://github.com/andreifer/TDD-#readme"
+  "homepage": "https://github.com/andreifer/TDD-#readme",
+  "dependencies": {
+    "jest": "^29.4.2",
+    "jest-junit": "^15.0.0"
+  }
 }
