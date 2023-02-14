@@ -6,24 +6,35 @@ describe("Teste da calculadora", () => {
     let resultado = calculadora.sum(1, 2);
     expect(resultado).toEqual(3);
 
-    resultado = calculadora.sum(0, 2);
-    expect(resultado).toEqual(2);
+    resultado = calculadora.sum(50, 50);
+    expect(resultado).toEqual(100);
 
-    
+    resultado = calculadora.sum(30, 20);
+    expect(resultado).toEqual(50);
+
+    resultado = calculadora.sum(12, 24);
+    expect(resultado).toEqual(36);
+
     resultado = () => calculadora.sum("a", 2);
     expect(resultado).toThrow("Não é um número");
-
   });
-  
-  
+
   it("Operacao Sub", () => {
     let resultado = calculadora.sub(1, 3);
     expect(resultado).toEqual(-2);
 
     resultado = calculadora.sub(0, 2);
     expect(resultado).toEqual(-2);
-  });
 
+    resultado = calculadora.sub(5, 5);
+    expect(resultado).toEqual(0);
+
+    resultado = calculadora.sub(10, 2);
+    expect(resultado).toEqual(8);
+
+    resultado = calculadora.sub(50, 49);
+    expect(resultado).toEqual(1);
+  });
 
   it("Operacao Mult", () => {
     let resultado = calculadora.mult(1, 3);
@@ -31,21 +42,86 @@ describe("Teste da calculadora", () => {
 
     resultado = calculadora.mult(2, 3);
     expect(resultado).toEqual(6);
-  });
 
+    resultado = calculadora.mult(5, 3);
+    expect(resultado).toEqual(15);
+
+    resultado = calculadora.mult(30, 10);
+    expect(resultado).toEqual(300);
+
+    resultado = calculadora.mult(100, 10);
+    expect(resultado).toEqual(1000);
+
+    resultado = calculadora.mult(28, 9);
+    expect(resultado).toEqual(252);
+
+    resultado = calculadora.mult(15, 15);
+    expect(resultado).toEqual(225);
+
+    resultado = calculadora.mult(3, 3);
+    expect(resultado).toEqual(9);
+  });
 
   it("Operacao div", () => {
     let resultado = calculadora.div(4, 2);
     expect(resultado).toEqual(2);
 
+    resultado = calculadora.div(10, 5);
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.div(6, 2);
+    expect(resultado).toEqual(3);
+
+    resultado = calculadora.div(3, 21);
+    expect(resultado).toEqual(0.14285714285714285);
+
+    resultado = calculadora.div(3, 10);
+    expect(resultado).toEqual(0.3);
+
     resultado = calculadora.div(2, 10);
     expect(resultado).toEqual(0.2);
-  });
 
+    resultado = calculadora.div(2, 2);
+    expect(resultado).toEqual(1);
+
+    resultado = calculadora.div(5, 4);
+    expect(resultado).toEqual(1.25);
+
+    resultado = calculadora.div(5, 5);
+    expect(resultado).toEqual(1);
+  });
 
   it("Operacao pot", () => {
     let resultado = calculadora.pot(4, 4);
     expect(resultado).toEqual(256);
-  });
-})
 
+    resultado = calculadora.pot(89, 3);
+    expect(resultado).toEqual(704969);
+
+    resultado = calculadora.pot(2, 4);
+    expect(resultado).toEqual(16);
+
+    resultado = calculadora.pot(9, 5);
+    expect(resultado).toEqual(59049);
+
+    resultado = calculadora.pot(66, 3);
+    expect(resultado).toEqual(287496);
+
+    resultado = calculadora.pot(4, 2);
+    expect(resultado).toEqual(16);
+
+    resultado = calculadora.pot(3, 4);
+    expect(resultado).toEqual(81);
+
+    resultado = calculadora.pot(2, 8);
+    expect(resultado).toEqual(256);
+
+    resultado = calculadora.pot(4, 6);
+    expect(resultado).toEqual(4096);
+  });
+
+  it("Operacao raiz", () => {
+    let resultado = calculadora.raiz(Math.sqrt(9));
+    expect(resultado).toEqual(3);
+  });
+});
