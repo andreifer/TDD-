@@ -122,6 +122,22 @@ describe("Teste da calculadora", () => {
 
   it("Operacao raiz", () => {
     let resultado = calculadora.raiz(Math.sqrt(9));
+    expect(resultado).toEqual(1.7320508075688772);
+    resultado = calculadora.raiz(Math.sqrt(4));
+    expect(resultado).toEqual(1.4142135623730951);
+    resultado = calculadora.raiz(Math.sqrt(16));
+    expect(resultado).toEqual(2);
+    resultado = calculadora.raiz(Math.sqrt(25));
+    expect(resultado).toEqual(2.23606797749979);
+    resultado = calculadora.raiz(Math.sqrt(81));
     expect(resultado).toEqual(3);
+    resultado = calculadora.raiz(Math.sqrt(64));
+    expect(resultado).toEqual(2.8284271247461903);
+    resultado = calculadora.raiz(Math.sqrt(49));
+    expect(resultado).toEqual(2.6457513110645907);
+    resultado = calculadora.raiz(Math.sqrt(196));
+    expect(resultado).toEqual(3.7416573867739413);
+    resultado = calculadora.raiz(Math.sqrt(6561));
+    expect(resultado).toEqual(9);
   });
 });
