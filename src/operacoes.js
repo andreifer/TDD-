@@ -39,6 +39,7 @@ function pot(num1, num2) {
 }
 
 function raiz(num1) {
+    console.log(num1)
     if(isNaN(num1)) {
         throw 'Não é um número';
     }

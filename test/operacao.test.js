@@ -32,8 +32,8 @@ describe("Teste da calculadora", () => {
     resultado = calculadora.sub(10, 2);
     expect(resultado).toEqual(8);
 
-    resultado = calculadora.sub(50, 49);
-    expect(resultado).toEqual(1);
+    resultado = () => calculadora.sub(50, "a");
+    expect(resultado).toThrow("Não é um número");
   });
 
   it("Operacao Mult", () => {
@@ -58,8 +58,8 @@ describe("Teste da calculadora", () => {
     resultado = calculadora.mult(15, 15);
     expect(resultado).toEqual(225);
 
-    resultado = calculadora.mult(3, 3);
-    expect(resultado).toEqual(9);
+    resultado = () => calculadora.mult(3, "a");
+    expect(resultado).toThrow("Não é um número");
   });
 
   it("Operacao div", () => {
@@ -72,8 +72,8 @@ describe("Teste da calculadora", () => {
     resultado = calculadora.div(6, 2);
     expect(resultado).toEqual(3);
 
-    resultado = calculadora.div(3, 21);
-    expect(resultado).toEqual(0.14285714285714285);
+    resultado = () => calculadora.div(3, "a");
+    expect(resultado).toThrow("Não é um número");
 
     resultado = calculadora.div(3, 10);
     expect(resultado).toEqual(0.3);
@@ -116,28 +116,28 @@ describe("Teste da calculadora", () => {
     resultado = calculadora.pot(2, 8);
     expect(resultado).toEqual(256);
 
-    resultado = calculadora.pot(4, 6);
-    expect(resultado).toEqual(4096);
+    resultado = () => calculadora.pot(4, "a");
+    expect(resultado).toThrow("Não é um número");
   });
 
   it("Operacao raiz", () => {
-    let resultado = calculadora.raiz(Math.sqrt(9));
-    expect(resultado).toEqual(1.7320508075688772);
-    resultado = calculadora.raiz(Math.sqrt(4));
-    expect(resultado).toEqual(1.4142135623730951);
-    resultado = calculadora.raiz(Math.sqrt(16));
-    expect(resultado).toEqual(2);
-    resultado = calculadora.raiz(Math.sqrt(25));
-    expect(resultado).toEqual(2.23606797749979);
-    resultado = calculadora.raiz(Math.sqrt(81));
+    let resultado = calculadora.raiz(9);
     expect(resultado).toEqual(3);
-    resultado = calculadora.raiz(Math.sqrt(64));
-    expect(resultado).toEqual(2.8284271247461903);
-    resultado = calculadora.raiz(Math.sqrt(49));
-    expect(resultado).toEqual(2.6457513110645907);
-    resultado = calculadora.raiz(Math.sqrt(196));
-    expect(resultado).toEqual(3.7416573867739413);
-    resultado = calculadora.raiz(Math.sqrt(6561));
+    resultado = calculadora.raiz(4);
+    expect(resultado).toEqual(2);
+    resultado = calculadora.raiz(0);
+    expect(resultado).toEqual(0);
+    resultado = calculadora.raiz(36);
+    expect(resultado).toEqual(6);
+    resultado = calculadora.raiz(16);
+    expect(resultado).toEqual(4);
+    resultado = calculadora.raiz(81);
     expect(resultado).toEqual(9);
+    resultado = calculadora.raiz(1);
+    expect(resultado).toEqual(1);
+    resultado = calculadora.raiz(49);
+    expect(resultado).toEqual(7);
+    resultado = () => calculadora.raiz("a");
+    expect(resultado).toThrow("Não é um número");
   });
 });
